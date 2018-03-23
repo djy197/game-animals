@@ -22,7 +22,9 @@ public class GameActivity extends AppCompatActivity {
     ImageView img4;
     Button question;
     TextView score;
+    TextView life;
     int scorenum=0;
+    int lifenum=3;
 
     int ran;
     int ran1;
@@ -41,13 +43,14 @@ public class GameActivity extends AppCompatActivity {
         img4 = (ImageView) findViewById(R.id.img_4);
         question=(Button) findViewById(R.id.question);
         score = (TextView) findViewById(R.id.score);
-
+        life = (TextView) findViewById(R.id.life);
 
         setImg();
     }
 
     private void setImg(){
         score.setText(String.valueOf(scorenum));
+        life.setText(String.valueOf(lifenum));
 
         Random rand = new Random();
         ran1=rand.nextInt(18);
@@ -93,15 +96,21 @@ public class GameActivity extends AppCompatActivity {
                 scorenum++;
                 setImg();;
             }
-            else{
+            else {
                 startActivity(new Intent(GameActivity.this,successActivity.class));
                 finish();
             }
         }
         else
         {
-            startActivity(new Intent(GameActivity.this,failActivity.class));
-            finish();
+            if(lifenum<1){
+                startActivity(new Intent(GameActivity.this,failActivity.class));
+                finish();
+            }
+            else {
+                lifenum--;
+                setImg();
+            }
         }
     }
 
@@ -119,8 +128,14 @@ public class GameActivity extends AppCompatActivity {
         }
         else
         {
-            startActivity(new Intent(GameActivity.this,failActivity.class));
-            finish();
+            if(lifenum<1){
+                startActivity(new Intent(GameActivity.this,failActivity.class));
+                finish();
+            }
+            else {
+                lifenum--;
+                setImg();
+            }
         }
     }
 
@@ -138,8 +153,14 @@ public class GameActivity extends AppCompatActivity {
         }
         else
         {
-            startActivity(new Intent(GameActivity.this,failActivity.class));
-            finish();
+            if(lifenum<1){
+                startActivity(new Intent(GameActivity.this,failActivity.class));
+                finish();
+            }
+            else {
+                lifenum--;
+                setImg();
+            }
         }
     }
 
@@ -157,8 +178,14 @@ public class GameActivity extends AppCompatActivity {
         }
         else
         {
-            startActivity(new Intent(GameActivity.this,failActivity.class));
-            finish();
+            if(lifenum<1){
+                startActivity(new Intent(GameActivity.this,failActivity.class));
+                finish();
+            }
+            else {
+                lifenum--;
+                setImg();
+            }
         }
     }
 }
