@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -20,6 +21,8 @@ public class GameActivity extends AppCompatActivity {
     ImageView img3;
     ImageView img4;
     Button question;
+    TextView score;
+    int scorenum=0;
 
     int ran;
     int ran1;
@@ -37,11 +40,15 @@ public class GameActivity extends AppCompatActivity {
         img3 = (ImageView) findViewById(R.id.img_3);
         img4 = (ImageView) findViewById(R.id.img_4);
         question=(Button) findViewById(R.id.question);
+        score = (TextView) findViewById(R.id.score);
+
 
         setImg();
     }
 
     private void setImg(){
+        score.setText(String.valueOf(scorenum));
+
         Random rand = new Random();
         ran1=rand.nextInt(18);
         do{
@@ -82,8 +89,14 @@ public class GameActivity extends AppCompatActivity {
     public void select1(View view) {
         if(ran==1)
         {
-            startActivity(new Intent(GameActivity.this,successActivity.class));
-            finish();
+            if(scorenum<4) {
+                scorenum++;
+                setImg();;
+            }
+            else{
+                startActivity(new Intent(GameActivity.this,successActivity.class));
+                finish();
+            }
         }
         else
         {
@@ -95,8 +108,14 @@ public class GameActivity extends AppCompatActivity {
     public void select2(View view) {
         if(ran==2)
         {
-            startActivity(new Intent(GameActivity.this,successActivity.class));
-            finish();
+            if(scorenum<4) {
+                scorenum++;
+                setImg();;
+            }
+            else{
+                startActivity(new Intent(GameActivity.this,successActivity.class));
+                finish();
+            }
         }
         else
         {
@@ -108,8 +127,14 @@ public class GameActivity extends AppCompatActivity {
     public void select3(View view) {
         if(ran==3)
         {
-            startActivity(new Intent(GameActivity.this,successActivity.class));
-            finish();
+            if(scorenum<4) {
+                scorenum++;
+                setImg();;
+            }
+            else{
+                startActivity(new Intent(GameActivity.this,successActivity.class));
+                finish();
+            }
         }
         else
         {
@@ -121,8 +146,14 @@ public class GameActivity extends AppCompatActivity {
     public void select4(View view) {
         if(ran==4)
         {
-            startActivity(new Intent(GameActivity.this,successActivity.class));
-            finish();
+            if(scorenum<4) {
+                scorenum++;
+                setImg();;
+            }
+            else{
+                startActivity(new Intent(GameActivity.this,successActivity.class));
+                finish();
+            }
         }
         else
         {

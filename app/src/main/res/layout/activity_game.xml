@@ -5,8 +5,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_blue">
 
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="0"
+        android:fontFamily="@font/font1"
+        android:textSize="50dp"/>
+
     <LinearLayout
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="2">
@@ -60,11 +68,11 @@
         android:id="@+id/question"
         android:layout_gravity="center"
         android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="ELEPHANT"
         android:fontFamily="@font/font1"
         android:textSize="35dp"
-        android:layout_height="wrap_content"
         android:textColor="#66ccff"
         android:background="@drawable/button_shape"/>
 </LinearLayout>
